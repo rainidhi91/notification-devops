@@ -1,0 +1,12 @@
+# NOTI nginx proxy image
+# Usage Url with / handled by frontend & /api/ hadled by rapi notification server
+
+FROM nginx:1.19.0-alpine
+
+# extra metadata
+LABEL version="1.0"
+LABEL description="Image for NOTI frontend."
+LABEL author="Parth Dabhi"
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.dev.conf /etc/nginx/conf.d
